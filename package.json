@@ -1,20 +1,19 @@
 {
-  "name": "app-heroku",
+  "name": "domesticos-backend",
   "version": "1.0.0",
-  "description": "some app",
+  "description": "domesticos backend for heroku",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
   },
   "keywords": [
-    "some"
+    "kruk"
   ],
-  "author": "lol",
+  "author": "VG",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": ">=4.1.11",
-    "body-parser": "1.19.0"
+    "mongoose": ">=4.1.11"
   }
 }

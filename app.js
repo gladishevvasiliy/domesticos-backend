@@ -1,14 +1,9 @@
 var express = require('express');
 var mongoose = require ("mongoose");
-var bodyParser = require("body-parser");
 var app = express();
-var path = require('path');
 
-var kruk = require("./routes/kruk.route"); // Imports routes for the products
-var composition = require("./routes/composition.route"); // Imports routes for the products
-
-
-var uristring = process.env.PROD_MONGODB 
+var kruk = require("./routes/kruk.route"); // Imports routes for the kruks
+var composition = require("./routes/composition.route"); // Imports routes for the compositions
 
 var theport = process.env.PORT || 5000;
 
@@ -21,11 +16,8 @@ mongoose.Promise = global.Promise;
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
-app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, 'index.html'));
-});
-
-// app.use("/kruk", kruk);
+app.use("/kruk", kruk);
+app.use("/composition", composition);
 
 app.listen(theport, function () {
     console.log('Node app is working!', theport);
