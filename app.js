@@ -20,5 +20,5 @@ app.use("/kruk", kruk);
 app.use("/composition", composition);
 
 app.listen(theport, function () {
-    console.log('Node app is working!', theport);
+    console.log('Backend is working on port', theport);
 });
