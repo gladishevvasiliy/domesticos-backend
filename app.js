@@ -3,10 +3,7 @@ var mongoose = require ("mongoose");
 var app = express();
 var path = require('path');
 
-var uristring =
-    process.env.MONGOLAB_URI ||
-    process.env.MONGOHQ_URL ||
-    'mongodb://localhost/HelloMongoose';
+var uristring = process.env.PROD_MONGODB 
 
 var theport = process.env.PORT || 5000;
 
