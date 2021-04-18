@@ -1,6 +1,9 @@
 var express = require('express')
 var mongoose = require('mongoose')
+var cors = require('cors')
 var app = express()
+
+app.use(cors())
 
 var kruk = require('./routes/kruk.route') // Imports routes for the kruks
 var composition = require('./routes/composition.route') // Imports routes for the compositions
