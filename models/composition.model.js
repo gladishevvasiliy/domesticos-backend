@@ -1,5 +1,5 @@
-var mongoose = require("mongoose");
-var Schema = mongoose.Schema;
+var mongoose = require('mongoose')
+var Schema = mongoose.Schema
 
 let CompositionSchema = new Schema({
   name: { type: String, required: true },
@@ -7,10 +7,11 @@ let CompositionSchema = new Schema({
     {
       value: [String],
       name: String,
-      tone: String
-    }
-  ]
-});
+      tone: String,
+      view: String,
+    },
+  ],
+})
 
 // Export the model
-module.exports = mongoose.model("Composition", CompositionSchema);
+module.exports = mongoose.model('Composition', CompositionSchema)
