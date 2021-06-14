@@ -1,9 +1,11 @@
 var express = require('express')
 var mongoose = require('mongoose')
 var cors = require('cors')
+var bodyParser = require('body-parser')
 var app = express()
 
 app.use(cors())
+var jsonParser = bodyParser.json()
 
 var kruk = require('./routes/kruk.route') // Imports routes for the kruks
 var composition = require('./routes/composition.route') // Imports routes for the compositions
@@ -20,8 +22,8 @@ mongoose.Promise = global.Promise
 var db = mongoose.connection
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
-app.use('/kruk', kruk)
-app.use('/composition', composition)
+app.use('/kruk', jsonParser, kruk)
+app.use('/composition', jsonParser, composition)
 
 app.listen(theport, function () {
   console.log('Backend is working on port', theport)
