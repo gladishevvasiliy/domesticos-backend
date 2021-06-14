@@ -8,7 +8,7 @@ let CompositionSchema = new Schema({
       value: [String],
       name: String,
       tone: String,
-      view: String,
+      view: [String],
     },
   ],
 })
