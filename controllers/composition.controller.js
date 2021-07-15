@@ -54,6 +54,7 @@ exports.edit_composition = function (req, res, next) {
           tone: req.body.tone,
           value: req.body.value,
           view: req.body.view,
+          valueText: req.body.valueText,
         },
       },
     },

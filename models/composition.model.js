@@ -6,6 +6,7 @@ let CompositionSchema = new Schema({
   compositions: [
     {
       value: [String],
+      valueText: [String],
       name: String,
       tone: String,
       view: [String],
